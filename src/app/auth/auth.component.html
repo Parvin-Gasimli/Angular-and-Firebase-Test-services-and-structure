@@ -1,30 +1,47 @@
 <section class="root">
-  <h1>
-    Hello Auth Page
+  <h1 class="authHeader">
+    Auth Login and Register
   </h1>
-  <form class="form">
+  <form (ngSubmit)="$event.preventDefault()" class="form">
     <app-atoms-input
+      [(ngModel)]="formData.name"
       [isRequired]="true"
-      inputPlaceholder="plesase enter the name"
+      inputName="name"
+      inputPlaceholder="please enter the name"
       inputType="text"
+      name="name"
     >
     </app-atoms-input>
     <app-atoms-input
+      [(ngModel)]="formData.email"
       [isRequired]="true"
-      inputPlaceholder="plesase enter the email"
+      inputName="email"
+      inputPlaceholder="please enter the email"
       inputType="email"
+      name="email"
     >
     </app-atoms-input>
     <app-atoms-input
+      [(ngModel)]="formData.password"
       [isRequired]="true"
-      inputPlaceholder="plesase enter the password"
+      inputName="password"
+      inputPlaceholder="please enter the password"
       inputType="password"
+      name="password"
     >
     </app-atoms-input>
     <app-atoms-button
+      (click)="onSave()"
       [Isdisabled]="false"
       label="Login"
+      type="submit"
     >
     </app-atoms-button>
   </form>
+  <div *ngIf="submitted">
+    <h2>Form Values:</h2>
+    <p>Name: {{ formData.name }}</p>
+    <p>Email: {{ formData.email }}</p>
+    <p>Password: {{ formData.password }}</p>
+  </div>
 </section>
