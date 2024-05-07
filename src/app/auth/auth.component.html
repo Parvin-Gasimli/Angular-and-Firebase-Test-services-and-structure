@@ -2,4 +2,29 @@
   <h1>
     Hello Auth Page
   </h1>
+  <form class="form">
+    <app-atoms-input
+      [isRequired]="true"
+      inputPlaceholder="plesase enter the name"
+      inputType="text"
+    >
+    </app-atoms-input>
+    <app-atoms-input
+      [isRequired]="true"
+      inputPlaceholder="plesase enter the email"
+      inputType="email"
+    >
+    </app-atoms-input>
+    <app-atoms-input
+      [isRequired]="true"
+      inputPlaceholder="plesase enter the password"
+      inputType="password"
+    >
+    </app-atoms-input>
+    <app-atoms-button
+      [Isdisabled]="false"
+      label="Login"
+    >
+    </app-atoms-button>
+  </form>
 </section>

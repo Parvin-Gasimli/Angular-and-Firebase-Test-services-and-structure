@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 export class AtomsButtonComponent {
   @Input() label: string = 'Button';
   @Input() Isicon?: boolean;
-  @Input() disabled: boolean = false;
+  @Input() Isdisabled: boolean = false;
   @Input() icon?: string = '';
+  @Input() className?: string = '';
 }
