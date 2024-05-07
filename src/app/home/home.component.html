@@ -1,0 +1,38 @@
+<div class="home">
+  <form (ngSubmit)="onSubmit()" class="form">
+    <input [(ngModel)]="postData.title" name="title" placeholder="Enter the title" type="text"/>
+    <input [(ngModel)]="postData.desc" name="description" placeholder="Enter the description" type="text"/>
+    <button type="submit">
+      {{ isLoading ? "loading..." : "add new" }}
+    </button>
+  </form>
+  <p *ngIf="LoadedData.length<1">No post Available</p>
+  <img *ngIf="isFetching&&!error"
+       src="https://media.tenor.com/O9-IuMAFQasAAAAM/uploading-dial.gif"
+       style="width: 100px;height: 100px"
+  />
+  <div *ngIf="error" class="alert-danger">
+    <h3>Ann error Occurred!</h3>
+    <p>{{ error }}</p>
+
+  </div>
+
+
+  <button (click)="onClearPost()"
+          class="btn">delete All item
+  </button>
+
+  <ul *ngIf="LoadedData.length>1" class="list">
+    <li *ngFor="let data of LoadedData" class="list__item">
+      <h4>{{ data.title }}</h4>
+      <p>{{ data.desc }}</p>
+
+      <button
+        class="btn"
+      >Delete
+      </button>
+    </li>
+  </ul>
+</div>
+
+

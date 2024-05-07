@@ -1,0 +1,10 @@
+<header>
+  <nav>
+    <ul class="list">
+      <li *ngFor="let item of LayoutItems">
+        <a [routerLink]="item?.url">{{ item.name }}</a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
