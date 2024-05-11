@@ -3,40 +3,38 @@
     Auth Login and Register
   </h1>
   <form (ngSubmit)="$event.preventDefault()" class="form">
+
     <app-atoms-input
-      [(ngModel)]="formData.name"
+      [(ngModel)]="formData.namels"
       [isRequired]="true"
       inputName="name"
-      inputPlaceholder="please enter the name"
+      inputPlaceholder="enter the name"
       inputType="text"
-      name="name"
-    >
-    </app-atoms-input>
+
+
+    />
     <app-atoms-input
-      [(ngModel)]="formData.email"
       [isRequired]="true"
       inputName="email"
-      inputPlaceholder="please enter the email"
+      inputPlaceholder="enter the email"
       inputType="email"
-      name="email"
-    >
-    </app-atoms-input>
+
+
+    />
     <app-atoms-input
-      [(ngModel)]="formData.password"
       [isRequired]="true"
       inputName="password"
-      inputPlaceholder="please enter the password"
+      inputPlaceholder="enter the password"
       inputType="password"
-      name="password"
-    >
-    </app-atoms-input>
+
+
+    />
     <app-atoms-button
       (click)="onSave()"
       [Isdisabled]="false"
       label="Login"
       type="submit"
-    >
-    </app-atoms-button>
+    />
   </form>
   <div *ngIf="submitted">
     <h2>Form Values:</h2>

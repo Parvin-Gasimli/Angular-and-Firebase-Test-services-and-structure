@@ -1,3 +1,9 @@
 <main>
-  <router-outlet></router-outlet>
+  <h1>
+    App
+    {{ count$ |async }}
+    <button (click)="Increment()">
+      Increment
+    </button>
+  </h1>
 </main>
